@@ -12,6 +12,8 @@ This guide outlines the steps to participate in the Kaggle competition for Hull 
 - Add the competition dataset (/kaggle/input/hull-tactical-market-prediction/train.csv) to your notebook.
 
 # 3. Environment Settings
+- LGBM: Set Accelerator to "None". (But, it doesn't matter if "GPU T4 x2".)
+- LSTM: Set Accelerator to "GPU T4 x2".
 
 # 4. Run Notebook
 - Execute the cells in your notebook sequentially to train models and generate predictions.
