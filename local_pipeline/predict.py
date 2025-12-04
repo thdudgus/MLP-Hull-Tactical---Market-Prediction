@@ -17,7 +17,7 @@ def predict(test: pl.DataFrame):
     
     # 2. 벡터 연산으로 계산 (모든 행에 대해 동시에 적용)
     # 1 + pred * 50 계산 후 0.0과 2.0 사이로 자름(clip)
-    pos = np.clip(1 + pred_forward * 50, 0.0, 2.0)
+    pos = np.clip(1 + pred_forward * 10, 0.0, 2.0)
     
     # 3. 배열(Array) 자체를 반환
     return pos

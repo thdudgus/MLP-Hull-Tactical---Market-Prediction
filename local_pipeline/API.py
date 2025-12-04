@@ -88,14 +88,10 @@ final_df['E1'] = df['ExRate']
 # ---------------------------------------------------------
 # 3. 데이터 정리 및 date_id 생성 (핵심 변경 사항)
 # ---------------------------------------------------------
-# (1) NaN 제거 (계산 불가능한 앞부분 5년치 제거)
 final_df = final_df.dropna()
 
 final_df['date'] = final_df.index.strftime('%Y-%m-%d')
 
-# (참고) 만약 날짜 정수(예: 20251105)를 원하시면 아래 주석을 사용하세요
-# dates_as_int = df.loc[final_df.index].index.strftime('%Y%m%d').astype(int)
-# final_df['date_id'] = dates_as_int
 
 # D1~D9도 날짜 관련이므로 예시로 정수화
 final_df['D1'] = final_df.index.dayofweek
@@ -112,4 +108,4 @@ print("\n=== date_id 데이터 타입 ===")
 print(final_df['date'].dtype)
 
 # 저장
-final_df.to_csv("kospi_formatted_train.csv", index=False)
+final_df.to_csv("formatted_train.csv", index=False)
